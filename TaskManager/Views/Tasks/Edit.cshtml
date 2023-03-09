@@ -1,0 +1,32 @@
+﻿@model TaskManager.Models.Tasks.TaskViewModel;
+
+<style>
+    .create-task-form div {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div>Задача #@Model.Id</div>
+
+<form method="post" class="create-task-form">
+    <fieldset>
+        <div class="form-element">
+            <label for="Subject">Subject</label>
+            <input type="text" name="Subject" value="@Model.Subject" />
+        </div>
+        <div>
+            <label for="ContractorId">Contractor</label>
+            <select name="ContractorId">
+            </select>
+        </div>
+        <div>
+            <label for="Description">Description</label>
+            <textarea cols="50" rows="10" name="Description" value="">@Model.Description</textarea>
+        </div>
+        <div>
+            <label>Create</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form>

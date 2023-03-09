@@ -1,0 +1,36 @@
+﻿<style>
+    .create-task-form div {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div>Создание новой задачи</div>
+
+<form method="post" class="create-task-form">
+    <fieldset>
+        <div class="form-element">
+            <label for="Subject">Subject</label>
+            <input type="text" name="Subject" value="" />
+        </div>
+        <div>
+            <label for="ContractorId">Contractor</label>
+            <select name="ContractorId">
+                @*                @{
+                foreach (var contractor in Model.Contractors)
+                {
+                <option value="@contractor.Id"> @contractor.Name </option>
+                }
+                }*@
+            </select>
+        </div>
+        <div>
+            <label for="Description">Description</label>
+            <textarea cols="50" rows="10" name="Description" value=""></textarea>
+        </div>
+        <div>
+            <label>Create</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form>
